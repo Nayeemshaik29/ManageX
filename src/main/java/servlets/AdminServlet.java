@@ -80,6 +80,7 @@ public class AdminServlet extends HttpServlet {
             String startDateStr = request.getParameter("startDate");
             if (startDateStr != null && !startDateStr.isEmpty()) {
                 java.util.Date parsed = sdf.parse(startDateStr);
+                System.out.println(parsed);
                 task.setStartDate(new java.sql.Date(parsed.getTime()));
             }
 

@@ -92,16 +92,7 @@
                             <a href="register.jsp" class="btn btn-outline-success btn-sm">Register here</a>
                         </p>
                         
-                        <div class="card bg-light mt-4 p-3">
-                            <div class="card-body">
-                                <h6 class="card-title">Test Credentials:</h6>
-                                <small>
-                                    <strong>Admin:</strong> admin / password123<br>
-                                    <strong>Team Leader:</strong> leader1 / password123<br>
-                                    <strong>Team Member:</strong> member1 / password123
-                                </small>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@
     
     <display-name>TaskManagementSystem</display-name>
     
+    <!-- Default page -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
@@ -26,5 +27,16 @@
         <error-code>500</error-code>
         <location>/login.jsp</location>
     </error-page>
-</web-app>
+    
+    <!-- Admin Servlet Mapping -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>servlets.AdminServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

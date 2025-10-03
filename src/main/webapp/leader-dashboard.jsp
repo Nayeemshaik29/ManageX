@@ -38,17 +38,22 @@
     <title>Team Leader Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark" href="#">🎯 Team Leader Dashboard</a>
+            <a class="navbar-brand text-white" href="#">🎯 Team Leader Dashboard</a>
             <div class="d-flex">
-                <span class="navbar-text text-dark me-3">
+                <span class="navbar-text text-white me-3">
                     Welcome, <%= session.getAttribute("fullName") %>
                 </span>
-                <a href="logout" class="btn btn-outline-dark btn-sm">Logout</a>
+                <a href="logout" class="btn btn-outline-light btn-sm">Logout</a>
             </div>
         </div>
     </nav>
@@ -72,7 +77,7 @@
         <!-- Statistics Cards -->
         <div class="row mb-4">
             <div class="col-md-3">
-                <div class="card bg-primary text-white">
+                <div class="card text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
                     <div class="card-body">
                         <h5 class="card-title">My Teams</h5>
                         <h2><%= myTeams.size() %></h2>
@@ -80,7 +85,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-info text-white">
+                <div class="card text-white" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border: none; box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);">
                     <div class="card-body">
                         <h5 class="card-title">Total Tasks</h5>
                         <h2><%= allTasks.size() %></h2>
@@ -88,7 +93,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-success text-white">
+                <div class="card text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none; box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);">
                     <div class="card-body">
                         <h5 class="card-title">Completed</h5>
                         <h2><%= completedCount %></h2>
@@ -96,7 +101,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-warning text-white">
+                <div class="card text-white" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border: none; box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);">
                     <div class="card-body">
                         <h5 class="card-title">Pending</h5>
                         <h2><%= pendingCount %></h2>
@@ -108,8 +113,8 @@
         <div class="row">
             <!-- Create Team Form -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
+                <div class="card" style="border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-radius: 12px;">
+                    <div class="card-header text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px 12px 0 0;">
                         <h5 class="mb-0">👥 Create New Team</h5>
                     </div>
                     <div class="card-body">
@@ -117,9 +122,9 @@
                             <input type="hidden" name="action" value="createTeam">
                             <div class="mb-3">
                                 <label class="form-label">Team Name</label>
-                                <input type="text" class="form-control" name="teamName" required>
+                                <input type="text" class="form-control" name="teamName" required style="border-radius: 8px;">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Create Team</button>
+                            <button type="submit" class="btn text-white w-100" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 8px;">Create Team</button>
                         </form>
                         
                         <hr>
@@ -127,9 +132,10 @@
                         <h6>My Teams:</h6>
                         <ul class="list-group">
                             <% for (Team team : myTeams) { %>
-                                <li class="list-group-item">
+                                <li class="list-group-item" style="border-radius: 8px; margin-bottom: 8px;">
                                     <strong><%= team.getTeamName() %></strong>
-                                    <button class="btn btn-sm btn-outline-primary float-end" 
+                                    <button class="btn btn-sm float-end text-white" 
+                                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;"
                                             data-bs-toggle="modal" 
                                             data-bs-target="#addMemberModal<%= team.getTeamId() %>">
                                         Add Member
@@ -139,10 +145,10 @@
                                 <!-- Add Member Modal -->
                                 <div class="modal fade" id="addMemberModal<%= team.getTeamId() %>" tabindex="-1">
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
+                                        <div class="modal-content" style="border-radius: 12px;">
+                                            <div class="modal-header text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px 12px 0 0;">
                                                 <h5 class="modal-title">Add Member to <%= team.getTeamName() %></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                             </div>
                                             <form action="teamleader" method="post">
                                                 <div class="modal-body">
@@ -150,7 +156,7 @@
                                                     <input type="hidden" name="teamId" value="<%= team.getTeamId() %>">
                                                     <div class="mb-3">
                                                         <label class="form-label">Select Member</label>
-                                                        <select class="form-select" name="memberId" required>
+                                                        <select class="form-select" name="memberId" required style="border-radius: 8px;">
                                                             <option value="">Choose a member</option>
                                                             <% for (User member : teamMembers) { %>
                                                                 <option value="<%= member.getUserId() %>">
@@ -161,8 +167,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Add Member</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="border-radius: 8px;">Close</button>
+                                                    <button type="submit" class="btn text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 8px;">Add Member</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -176,8 +182,8 @@
             
             <!-- Give Feedback Form -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-success text-white">
+                <div class="card" style="border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-radius: 12px;">
+                    <div class="card-header text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px 12px 0 0;">
                         <h5 class="mb-0">💬 Give Feedback</h5>
                     </div>
                     <div class="card-body">
@@ -185,7 +191,7 @@
                             <input type="hidden" name="action" value="giveFeedback">
                             <div class="mb-3">
                                 <label class="form-label">Select Task</label>
-                                <select class="form-select" name="taskId" required>
+                                <select class="form-select" name="taskId" required style="border-radius: 8px;">
                                     <option value="">Choose a task</option>
                                     <% for (Task task : allTasks) { %>
                                         <option value="<%= task.getTaskId() %>">
@@ -196,9 +202,9 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Feedback</label>
-                                <textarea class="form-control" name="feedbackText" rows="4" required></textarea>
+                                <textarea class="form-control" name="feedbackText" rows="4" required style="border-radius: 8px;"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-success w-100">Submit Feedback</button>
+                            <button type="submit" class="btn text-white w-100" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none; border-radius: 8px;">Submit Feedback</button>
                         </form>
                     </div>
                 </div>
@@ -206,8 +212,8 @@
         </div>
         
         <!-- Tasks Table -->
-        <div class="card">
-            <div class="card-header bg-dark text-white">
+        <div class="card" style="border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-radius: 12px;">
+            <div class="card-header text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px 12px 0 0;">
                 <h5 class="mb-0">📋 Team Tasks & Progress</h5>
             </div>
             <div class="card-body">
@@ -244,12 +250,14 @@
                                     <td><%= task.getStartDate() %></td>
                                     <td><%= task.getDeadline() %></td>
                                     <td>
-                                        <button class="btn btn-warning btn-sm" 
+                                        <button class="btn btn-sm text-white" 
+                                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border: none; border-radius: 6px;"
                                                 data-bs-toggle="modal" 
                                                 data-bs-target="#priorityModal<%= task.getTaskId() %>">
                                             Set Priority
                                         </button>
-                                        <button class="btn btn-info btn-sm" 
+                                        <button class="btn btn-sm text-white" 
+                                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none; border-radius: 6px;"
                                                 data-bs-toggle="modal" 
                                                 data-bs-target="#datesModal<%= task.getTaskId() %>">
                                             Set Dates
@@ -260,10 +268,10 @@
                                 <!-- Priority Modal -->
                                 <div class="modal fade" id="priorityModal<%= task.getTaskId() %>" tabindex="-1">
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
+                                        <div class="modal-content" style="border-radius: 12px;">
+                                            <div class="modal-header text-white" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px 12px 0 0;">
                                                 <h5 class="modal-title">Set Priority: <%= task.getTitle() %></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                             </div>
                                             <form action="teamleader" method="post">
                                                 <div class="modal-body">
@@ -271,7 +279,7 @@
                                                     <input type="hidden" name="taskId" value="<%= task.getTaskId() %>">
                                                     <div class="mb-3">
                                                         <label class="form-label">Priority Level</label>
-                                                        <select class="form-select" name="priority" required>
+                                                        <select class="form-select" name="priority" required style="border-radius: 8px;">
                                                             <option value="low" <%= "low".equals(task.getPriority()) ? "selected" : "" %>>Low</option>
                                                             <option value="medium" <%= "medium".equals(task.getPriority()) ? "selected" : "" %>>Medium</option>
                                                             <option value="high" <%= "high".equals(task.getPriority()) ? "selected" : "" %>>High</option>
@@ -280,8 +288,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-warning">Update Priority</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="border-radius: 8px;">Close</button>
+                                                    <button type="submit" class="btn text-white" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border: none; border-radius: 8px;">Update Priority</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -291,10 +299,10 @@
                                 <!-- Dates Modal -->
                                 <div class="modal fade" id="datesModal<%= task.getTaskId() %>" tabindex="-1">
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
+                                        <div class="modal-content" style="border-radius: 12px;">
+                                            <div class="modal-header text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px 12px 0 0;">
                                                 <h5 class="modal-title">Set Dates: <%= task.getTitle() %></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                             </div>
                                             <form action="teamleader" method="post">
                                                 <div class="modal-body">
@@ -303,17 +311,17 @@
                                                     <div class="mb-3">
                                                         <label class="form-label">Start Date</label>
                                                         <input type="date" class="form-control" name="startDate" 
-                                                               value="<%= task.getStartDate() %>" required>
+                                                               value="<%= task.getStartDate() %>" required style="border-radius: 8px;">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Deadline</label>
                                                         <input type="date" class="form-control" name="deadline" 
-                                                               value="<%= task.getDeadline() %>" required>
+                                                               value="<%= task.getDeadline() %>" required style="border-radius: 8px;">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-info">Update Dates</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="border-radius: 8px;">Close</button>
+                                                    <button type="submit" class="btn text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none; border-radius: 8px;">Update Dates</button>
                                                 </div>
                                             </form>
                                         </div>
