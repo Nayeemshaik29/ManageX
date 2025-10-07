@@ -75,8 +75,7 @@ public class AdminServlet extends HttpServlet {
                     ? Integer.parseInt(teamIdStr) : 0);
 
             // Dates
-            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
-
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
             String startDateStr = request.getParameter("startDate");
             if (startDateStr != null && !startDateStr.isEmpty()) {
                 java.util.Date parsed = sdf.parse(startDateStr);
