@@ -78,7 +78,7 @@
                                 <label for="role" class="form-label">Role</label>
                                 <select class="form-select" id="role" name="role" required>
                                     <option value="">-- Select Role --</option>
-                                    <option value="admin">Admin</option>
+                                   
                                     <option value="team_leader">Team Leader</option>
                                     <option value="team_member">Team Member</option>
                                 </select>
