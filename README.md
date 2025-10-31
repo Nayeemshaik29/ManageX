@@ -253,43 +253,95 @@ SELECT * FROM feedback;
 <table>
 <tr>
 <td width="50%">
-<img src="screenshots/login.png" alt="Login Page" />
-<p align="center"><b>Modern Login Interface</b></p>
+
+![Login Page](docs/screenshots/login.png)
+
+**Modern Login Interface**
+- Office-themed design
+- Role-based authentication
+- Secure credential management
+
 </td>
 <td width="50%">
-<img src="screenshots/register.png" alt="Registration Page" />
-<p align="center"><b>User Registration</b></p>
+
+![Registration Page](docs/screenshots/register.png)
+
+**User Registration**
+- Role selection dropdown
+- Form validation
+- Email verification
+
 </td>
 </tr>
 </table>
 </div>
 
 ### 👨‍💼 Admin Dashboard
-<img src="screenshots/admin-dashboard.png" alt="Admin Dashboard" />
+
+![Admin Dashboard](docs/screenshots/admin-dashboard.png)
 
 **Features:**
 - System-wide statistics (Total Tasks, Users, Teams, Members)
 - Add new tasks with priority and assignment
 - Assign/change user roles
 - View all tasks with status tracking
+- Delete tasks functionality
 
 ### 👔 Team Leader Dashboard
-<img src="screenshots/team-leader-dashboard.png" alt="Team Leader Dashboard" />
+
+![Team Leader Dashboard](docs/screenshots/team-leader-dashboard.png)
 
 **Features:**
-- Team overview with task completion metrics
+- Team overview with task completion metrics (Completed: 1, Pending: 1)
 - Create new teams and add members
-- Task management with priority settings
+- Task management with priority settings (Critical, High, Low, Medium)
 - Feedback submission system
+- Set task priorities and update details
 
 ### 👨‍💻 Team Member Dashboard
-<img src="screenshots/team-member-dashboard.png" alt="Team Member Dashboard" />
+
+![Team Member Dashboard](docs/screenshots/team-member-dashboard.png)
 
 **Features:**
-- Personal task statistics
+- Personal task statistics (Total: 1, Completed: 0, In Progress: 0, Pending: 1)
 - Complete tasks with one click
 - Submit feedback on tasks
-- View recent feedback from leaders
+- View recent feedback from leaders with timestamps
+- View detailed task information (Description, Priority, Status, Deadline)
+
+---
+
+## 📷 Setting Up Screenshots
+
+To display the screenshots in your README:
+
+1. **Create a screenshots folder in your repository:**
+   ```
+   TaskManagementSystem/
+   ├── docs/
+   │   └── screenshots/
+   │       ├── login.png
+   │       ├── register.png
+   │       ├── admin-dashboard.png
+   │       ├── team-leader-dashboard.png
+   │       └── team-member-dashboard.png
+   ```
+
+2. **Save your application screenshots** (the images you shared with me) with these exact names
+
+3. **Commit and push to GitHub:**
+   ```bash
+   git add docs/screenshots/
+   git commit -m "Add application screenshots"
+   git push origin main
+   ```
+
+4. **Alternative:** If you want to use a different path, update the image paths in the README:
+   ```markdown
+   ![Login Page](your-path/login.png)
+   ```
+
+> **Tip:** Make sure your screenshots are optimized (not too large) for faster loading. Recommended max width: 1200px
 
 ---
 
@@ -356,23 +408,9 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👨‍💻 Author
-
-**Your Name**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
----
 
 <div align="center">
 
